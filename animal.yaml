@@ -1,0 +1,103 @@
+# animal.yaml — placed at S:\final\animal.yaml
+train: data/train/images
+val:   data/valid/images
+test:  data/test/images
+
+nc: 95
+
+names:
+  0: Balaeniceps rex
+  1: Cybister
+  2: antelope
+  3: badger
+  4: bat
+  5: bear
+  6: bee
+  7: beetle
+  8: bison
+  9: boar
+  10: buffalo
+  11: butterfly
+  12: cat
+  13: caterpillar
+  14: chimpanzee
+  15: cockroach
+  16: cow
+  17: crab
+  18: crow
+  19: deer
+  20: dog
+  21: dolphin
+  22: donkey
+  23: dragonfly
+  24: duck
+  25: eagle
+  26: elephant
+  27: flamingo
+  28: fly
+  29: fox
+  30: giraffe
+  31: goat
+  32: goldfish
+  33: goose
+  34: gorilla
+  35: grasshopper
+  36: hamster
+  37: hare
+  38: hedgehog
+  39: hippopotamus
+  40: hornbill
+  41: horse
+  42: human
+  43: hummingbird
+  44: hyena
+  45: jellyfish
+  46: kangaroo
+  47: koala
+  48: ladybug
+  49: leopard
+  50: lion
+  51: lizard
+  52: lobster
+  53: mammoth
+  54: mosquito
+  55: moth
+  56: mouse
+  57: octopus
+  58: okapi
+  59: opossum
+  60: orangutan
+  61: otter
+  62: owl
+  63: ox
+  64: oyster
+  65: panda
+  66: parrot
+  67: pelecaniformes
+  68: penguin
+  69: pig
+  70: pigeon
+  71: porcupine
+  72: raccoon
+  73: rat
+  74: reindeer
+  75: rhinoceros
+  76: sandpiper
+  77: seahorse
+  78: seal
+  79: shark
+  80: sheep
+  81: snake
+  82: sparrow
+  83: squid
+  84: squirrel
+  85: starfish
+  86: swan
+  87: tiger
+  88: turkey
+  89: turtle
+  90: whale
+  91: wolf
+  92: wombat
+  93: woodpecker
+  94: zebra
