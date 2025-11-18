@@ -1,124 +1,147 @@
-🐾 Animal Detection Web App (My Custom Model + Streamlit)
+# 🐾 Animal Detection Web App (Custom Model + Streamlit)
 
-This project is a fully custom-built animal detection system developed for my internship project.
-I trained my own object detection model from scratch using a YOLO-based architecture and a custom dataset of 95+ animal species.
+This project is a fully custom-built animal detection system, developed as part of my internship project.
+I trained my own YOLO-based object detection model from scratch on a custom dataset of 95+ animal species.
 
-The system detects animals in images and videos, highlights carnivores in red, and generates fully annotated videos.
+The system can:
 
-📘 Problem Statement
+Detect animals in images & videos
+
+Highlight carnivores in red
+
+Generate annotated videos
+
+Provide a summary of detected species
+
+ ## 📘 Problem Statement
 
 Wildlife monitoring teams face challenges such as:
 
-Identifying animals automatically
+🔍 Automatically identifying animals
 
-Distinguishing carnivores from non-carnivores
+🐺 Distinguishing carnivores vs non-carnivores
 
-Processing long videos frame-by-frame
+🎞 Processing long videos frame-by-frame
 
-Creating a simple UI for non-technical users
+🧑‍💻 Providing an easy UI for non-technical users
 
-Playing processed videos directly in the browser
+▶️ Playing annotated output videos inside a web app
 
-This project solves these problems using my custom-trained model and a Streamlit web interface.
+This project solves these issues using my custom-trained detection model + Streamlit interface.
 
-📚 Dataset
+## 📚 Dataset Description
 
-For this internship project, I created and used a custom dataset containing 95 animal classes, including:
+For this internship project, I created and used a custom dataset with 95 animal classes such as:
 
-Elephant, Tiger, Lion
+🐘 Elephant
 
-Rhino, Giraffe, Zebra
+🐅 Tiger
 
-Fox, Wolf, Bear
+🦁 Lion
 
-Parrot, Flamingo, Penguin
+🦏 Rhino
 
-And many more…
+🦒 Giraffe
 
-Dataset Notes
+🦓 Zebra
 
-YOLO-format annotated images
+🦊 Fox
 
-Thousands of samples
+🐺 Wolf
 
-Diverse lighting, angle, background conditions
+🐻 Bear
 
-Configured using my custom animal.yaml
+🐧 Penguin
 
-⚙️ Methodology
-### 🧠 Model Development (My Own Custom Model)
+🦩 Flamingo
 
-Architecture: YOLO-based object detector (custom configuration)
+🦜 Parrot
 
-Trained using my dataset
+### Dataset Notes
 
-Loss tuning & threshold optimization
+📁 YOLO-format labeled images
 
-Confidence filtering to prevent duplicate detections
+📸 Thousands of samples
 
-Special mapping for carnivore identification
+🌤 Wide variations: lighting, angles, camera types
 
-### 🎯 Carnivore Highlighting Logic
+⚙️ Configured through a custom animal.yaml
 
-Carnivores → Red bounding box
+## ⚙️ Methodology
 
-Non-carnivores → Green bounding box
+### 🧠 1. Custom Model Development
 
-No extra yellow popups or confusion
+YOLO-based architecture (custom configuration)
 
-### 🎥 Video Processing Steps
+Trained on my own dataset
+
+Loss tuning and hyperparameter optimization
+
+Confidence thresholding to avoid duplicate predictions
+
+Custom mapping for identifying carnivores
+
+### 🎯 2. Carnivore Highlighting Logic
+
+🔴 Carnivores → Red bounding box
+
+🟢 Non-carnivores → Green bounding box
+
+❌ No yellow pop-ups or noisy overlays
+
+### 🎥 3. Video Processing Pipeline
 
 User uploads a video
 
-Saved to a temporary location
+Saved to temporary storage
 
 Read frame-by-frame
 
-My model detects animals on each frame
+My model detects animals
 
-Draw bounding boxes + labels
+Bounding boxes + labels drawn
 
-Write a new annotated MP4 video using FFmpeg-supported codecs
+Video re-encoded using FFmpeg-compatible codec
 
-Streamlit displays the final video + species summary
+Streamlit displays the annotated video + summary
 
-🧩 FFmpeg Requirement (Important for Annotated Video Playback)
+### 🧩 FFmpeg Requirement (Important)
 
-To view the annotated processed video inside the Streamlit app,
-FFmpeg must be installed.
+To play annotated MP4 videos inside Streamlit, FFmpeg must be installed.
 
-✔ Check if FFmpeg is available:
+✅ Check FFmpeg:
 ffmpeg -version
 
-
-If the command is not found:
-
-✔ Windows Installation:
+❌ If it says “command not found”, install using:
 winget install --id=Gyan.FFmpeg -e
 
 
-After installation, restart your terminal, then check again:
+Then restart terminal:
 
 ffmpeg -version
 
 
-If FFmpeg is missing, the processed video will download, but will not play inside Streamlit.
+### ⚠️ Without FFmpeg:
 
-🧪 Results
-### ✔ Image Detection
+Video will download,
 
-Accurate single prediction per animal
+But will NOT play inside the Streamlit app.
 
-NO duplicate classes on one object
+## 🧪 Results
+### ✔️ Image Detection
 
-Carnivores colored correctly in red
+🟢 Clean bounding boxes
 
-Clean bounding boxes without noise
+🚫 No duplicate detections
 
-### ✔ Video Detection
+🔴 Carnivores correctly detected in red
 
-Smooth processing across frames
+📌 High confidence predictions
 
-Annotated MP4 plays inside the app
+### ✔️ Video Detection
 
-Summary of species counts is auto-generated
+🎞 Smooth frame-by-frame annotation
+
+🖼 Output MP4 plays directly in Streamlit
+
+📊 Animal count summary auto-generated
