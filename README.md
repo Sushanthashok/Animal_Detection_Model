@@ -127,6 +127,21 @@ Video will download,
 
 But will NOT play inside the Streamlit app.
 
+## Make sure run this before run your app.py
+
+This does not require restarting VS Code or Windows. Run the following PowerShell block exactly — it searches for the installed ffmpeg.exe, adds its folder to the session PATH, and then shows version info:
+```
+# find ffmpeg.exe and add its folder to this shell's PATH (one-shot, session only)
+$ff = Get-ChildItem -Path $env:LOCALAPPDATA -Filter 'ffmpeg.exe' -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1
+if ($ff) {
+    $folder = $ff.DirectoryName
+    $env:PATH = "$env:PATH;$folder"
+    Write-Output "Added to PATH for this session: $folder"
+    ffmpeg -version
+} else {
+    Write-Error "ffmpeg.exe not found under $env:LOCALAPPDATA. If not found, close & re-open your terminal (Option 2)."
+}
+```
 ## 🧪 Results
 ### ✔️ Image Detection
 
@@ -145,3 +160,19 @@ But will NOT play inside the Streamlit app.
 🖼 Output MP4 plays directly in Streamlit
 
 📊 Animal count summary auto-generated
+
+## 📁 Project Structure
+```
+project/
+ ├── app.py
+ ├── video_predict.py
+ ├── image_predict.py
+ ├── animal.yaml
+ ├── check_labels.py
+ ├── requirements.txt
+ ├── best.pt         ← (MY OWN TRAINED MODEL)
+ ├── runs/                       
+ └── data/
+```            
+
+
