@@ -175,4 +175,6 @@ project/
  └── data/
 ```            
 
+## DATA,VISUAL OUTPUT and TRAINING FILE LINK
 
+[Drive Link](https://drive.google.com/drive/folders/142eIYXz-W3-OQKzkgsFblZ_kjQyBlGrn?usp=sharing)
